@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion">
+    <meta name="keywords" content="INTERSPEECH 2024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <link rel="icon" type="image/png" href="./static/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="./static/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="./static/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" href="./static/favicon/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/comp-slider.js" defer></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+    <a id="btt-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <polygon points="12 6.586 3.293 15.293 4.707 16.707 12 9.414 19.293 16.707 20.707 15.293 12 6.586"/>
+        </svg>
+    </a>
+
+    <section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+                Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion
+            </h1>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                    <a href="https://hci.nw.ru/en/employees/14" target="_blank">Elena Ryumina</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                    <a href="https://hci.nw.ru/en/employees/3" target="_blank">Dmitry Ryumin</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                    <a href="https://hci.nw.ru/en/employees/9" target="_blank">Alexandr Axyonov</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                <a href="https://hci.nw.ru/en/employees/4" target="_blank">Denis Ivanko</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                    <a href="https://hci.nw.ru/en/employees/1" target="_blank">Alexey Karpov</a><sup>2</sup>
+                </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup> St. Petersburg Institute for Informatics and Automation of the Russian Academy of Sciences, <a href="https://spcras.ru/en/" target="_blank">St. Petersburg Federal Research Center of the Russian Academy of Sciences (SPC RAS)</a>, St. Petersburg, Russia</span>
+                <span class="author-block"><sup>2</sup> <a href="https://en.itmo.ru/" target="_blank">ITMO University</a>, St. Petersburg, Russia</span>
+                <br />
+            </div>
+
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                    <a href="#"
+                    target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper (coming soon)</span>
+                    </a>
+                </span>
+                <!-- <span class="link-block">
+                    <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                    </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                    <a href="https://github.com/INTERSPEECH-2024/MER/tree/main/src/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (in progress)</span>
+                    </a>
+                </span>
+                <!-- Model Link. -->
+                <span class="link-block">
+                    <a href="#" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>🤗 Model (coming soon)</span>
+                    </a>
+                </span>
+                <!-- Demo Link. -->
+                <span class="link-block">
+                    <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>🤗 Demo (coming soon)</span>
+                    </a>
+                </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <section class="section" style="padding: 0; margin:0">
+
+        <div class="TODO-section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-5">TODO List</h2>
+                        <div class="content has-text-justified">
+                            <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+                                <defs>
+                                    <path id="todo__line" stroke="#363636" d="M21 12.3h280v0.1z" ></path>
+                                    <path id="todo__box" stroke="#363636" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+                                    <path id="todo__check" stroke="#2b8f30" d="M10 13l2 2 5-5"></path>
+                                    <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+                                </defs>
+                            </svg>
+                            <div class="todo-list">
+
+                            <label class="todo">
+                                <input class="todo__state" type="checkbox" />
+
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 25" class="todo__icon">
+                                <use xlink:href="#todo__line" class="todo__line"></use>
+                                <use xlink:href="#todo__box" class="todo__box"></use>
+                                <use xlink:href="#todo__check" class="todo__check"></use>
+                                <use xlink:href="#todo__circle" class="todo__circle"></use>
+                                </svg>
+
+                                <div class="todo__text">GitHub page creation</div>
+                            </label>
+
+                            <label class="todo">
+                                <input class="todo__state" type="checkbox" />
+
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 25" class="todo__icon">
+                                <use xlink:href="#todo__line" class="todo__line"></use>
+                                <use xlink:href="#todo__box" class="todo__box"></use>
+                                <use xlink:href="#todo__check" class="todo__check"></use>
+                                <use xlink:href="#todo__circle" class="todo__circle"></use>
+                                </svg>
+
+                                <div class="todo__text">Release code and models (soon) </div>
+                            </label>
+
+                            <label class="todo">
+                                <input class="todo__state" type="checkbox" />
+
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 25" class="todo__icon">
+                                <use xlink:href="#todo__line" class="todo__line"></use>
+                                <use xlink:href="#todo__box" class="todo__box"></use>
+                                <use xlink:href="#todo__check" class="todo__check"></use>
+                                <use xlink:href="#todo__circle" class="todo__circle"></use>
+                                </svg>
+
+                                <div class="todo__text">Release Demo (soon) </div>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="abstract-section">
+            <div class="container is-max-desktop abstract-sect">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                Automatic emotion recognition methods are critical to human-computer interaction. However, current methods suffer from limited applicability due to their tendency to overfit on single-corpus datasets. This overfitting reduces real-world effectiveness of the methods when faced with new unseen corpora. We propose the first multi-corpus multimodal emotion recognition method with high generalizability evaluated through a leave-one-corpus-out protocol. The method uses three fine-tuned encoders per modality (audio, video, and text) and a decoder employing context-independent gated attention to combine features from all three modalities. The research is conducted on four benchmark corpora: MOSEI, MELD, IEMOCAP, and AFEW.  The proposed method achieves the state-of-the-art results on the corpora and establishes the first baselines for multi-corpus studies.
+                                We demonstrate that due to the MELD rich emotional expressiveness across three modalities, the models trained on it exhibit the best generalization ability when applied to corpora used.
+                                We also reveal that the AFEW annotation better correlates with the annotations of MOSEI, MELD, IEMOCAP and shows the best cross-corpus performance as it is consistent with the widely-accepted concepts of basic emotions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pipeline-section">
+            <div class="container is-max-desktop">
+                <div class="pipeline">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Pipeline of the proposed multimodal ER method</h2>
+                            <img class="img-method" src="./static/img/pipeline.png" alt="pipeline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pipeline-section">
+            <div class="container is-max-desktop">
+                <div class="pipeline">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Gated feature layer (GFL) architecture</h2>
+                            <img class="img-method" id="gfl" src="./static/img/gfl.png" alt="pipeline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="table-section">
+        <div class="container is-max-desktop">
+            <div class="table">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h6 class="title is-6">The statistics of research corpora. Acc refers to Accuracy, wAcc to Weighted Accuracy, F1 to F1-score, UAR to Unweighted Average Recall.</h6>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Corpus</th>
+                                    <th>Dur., h</th>
+                                    <th>Dur. range, sec (Min / Max / Mean)</th>
+                                    <th>Train</th>
+                                    <th>Val.</th>
+                                    <th>Test</th>
+                                    <th>Classes of emotions</th>
+                                    <th>Class imbalance (Mean / STD)</th>
+                                    <th>Evaluation measures</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IEMOCAP</td>
+                                    <td>9:24</td>
+                                    <td>0.6 / 34.1 / 4.6</td>
+                                    <td>5229</td>
+                                    <td>581</td>
+                                    <td>1623</td>
+                                    <td>6</td>
+                                    <td>959.7 / 344.4</td>
+                                    <td>Acc / F1 / UAR</td>
+                                </tr>
+                                <tr>
+                                    <td>MOSEI</td>
+                                    <td>45:51</td>
+                                    <td>0.2 / 108.9 / 7.2</td>
+                                    <td>16216</td>
+                                    <td>1835</td>
+                                    <td>4625</td>
+                                    <td>6</td>
+                                    <td>3734.3 / 2441.1</td>
+                                    <td>Acc / wAcc / F1 / UAR</td>
+                                </tr>
+                                <tr>
+                                    <td>MELD</td>
+                                    <td>12:4</td>
+                                    <td>0.2 / 304.9 / 3.2</td>
+                                    <td>9989</td>
+                                    <td>1109</td>
+                                    <td>2610</td>
+                                    <td>7</td>
+                                    <td>1426.9 / 1427.0</td>
+                                    <td>Acc / F1 / UAR</td>
+                                </tr>
+                                <tr>
+                                    <td>AFEW</td>
+                                    <td>0:48</td>
+                                    <td>0.5 / 6.3 / 2.5</td>
+                                    <td>773</td>
+                                    <td>383</td>
+                                    <td>--</td>
+                                    <td>7</td>
+                                    <td>110.4 / 31.1</td>
+                                    <td>Acc / F1 / UAR</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <div class="container is-max-desktop">
+            <div class="table">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h6 class="title is-6">Results (Recall, %) of two setups of single-corpus ablation based on single-corpus models trained with the weighted loss. A, V and T refer to audio, video and text modalities, respectively. ↓ and ↑ show the most and least informative modalities compared to the three-modal model performance.</h6>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Modality</th>
+                                    <th>Neutral</th>
+                                    <th>Happy</th>
+                                    <th>Sad</th>
+                                    <th>Angry</th>
+                                    <th>Excited</th>
+                                    <th colspan="2">Frustrated</th>
+                                    <th>UAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" class="center"><b>IEMOCAP</b></td>
+                                </tr>
+                                <tr>
+                                    <td>A+V+T</td>
+                                    <td class="center">76.6</td>
+                                    <td class="center">51.7</td>
+                                    <td class="center">78.0</td>
+                                    <td class="center">78.8</td>
+                                    <td class="center">75.3</td>
+                                    <td colspan="2" class="center">69.6</td>
+                                    <td class="center">71.6</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 1. Modality feature nullification</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">69.5</td>
+                                    <td class="center">42.7</td>
+                                    <td class="center">74.3</td>
+                                    <td class="center">60.0 ↓</td>
+                                    <td class="center">72.6</td>
+                                    <td colspan="2" class="center">68.5</td>
+                                    <td class="center">64.6</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">57.0 ↓</td>
+                                    <td class="center">58.0 ↑</td>
+                                    <td class="center">69.0</td>
+                                    <td class="center">72.4</td>
+                                    <td class="center">51.5 ↓</td>
+                                    <td colspan="2" class="center">77.4 ↑</td>
+                                    <td class="center">64.2</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">82.8 ↑</td>
+                                    <td class="center">14.7 ↓</td>
+                                    <td class="center">66.1 ↓</td>
+                                    <td class="center">77.6</td>
+                                    <td class="center">72.9</td>
+                                    <td colspan="2" class="center">3.4 ↓</td>
+                                    <td class="center">52.9 ↓</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 2. Modality exclusion</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">69.3</td>
+                                    <td class="center">50.3</td>
+                                    <td class="center">77.1</td>
+                                    <td class="center">74.1</td>
+                                    <td class="center">70.2</td>
+                                    <td colspan="2" class="center">66.1</td>
+                                    <td class="center">67.9</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">66.9 ↓</td>
+                                    <td class="center">48.3 ↓</td>
+                                    <td class="center">73.9 ↓</td>
+                                    <td class="center">75.9</td>
+                                    <td class="center">65.6</td>
+                                    <td colspan="2" class="center">66.7</td>
+                                    <td class="center">66.2</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">71.9</td>
+                                    <td class="center">64.3 ↑</td>
+                                    <td class="center">85.7 ↑</td>
+                                    <td class="center">56.5 ↓</td>
+                                    <td class="center">62.2 ↓</td>
+                                    <td colspan="2" class="center">54.9 ↓</td>
+                                    <td class="center">65.9 ↓</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Modality</th>
+                                    <th>Neutral</th>
+                                    <th>Happy / Joy</th>
+                                    <th>Sad</th>
+                                    <th>Angry</th>
+                                    <th>Surprise</th>
+                                    <th>Fear</th>
+                                    <th>Disgust</th>
+                                    <th>UAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" class="center"><b>MOSEI</b></td>
+                                </tr>
+                                <tr>
+                                    <td>A+V+T</td>
+                                    <td class="center">--</td>
+                                    <td class="center">77.4</td>
+                                    <td class="center">57.3</td>
+                                    <td class="center">56.9</td>
+                                    <td class="center">48.4</td>
+                                    <td class="center">54.0</td>
+                                    <td class="center">68.9</td>
+                                    <td class="center">60.5</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 1. Modality feature nullification</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">--</td>
+                                    <td class="center">72.8</td>
+                                    <td class="center">52.7 ↓</td>
+                                    <td class="center">69.7 ↑</td>
+                                    <td class="center">44.3 ↓</td>
+                                    <td class="center">52.2</td>
+                                    <td class="center">68.1</td>
+                                    <td class="center">60.0</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">--</td>
+                                    <td class="center">71.6 ↓</td>
+                                    <td class="center">53.2</td>
+                                    <td class="center">55.7</td>
+                                    <td class="center">50.7 ↑</td>
+                                    <td class="center">51.7</td>
+                                    <td class="center">72.5 ↑</td>
+                                    <td class="center">59.2</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">--</td>
+                                    <td class="center">72.2</td>
+                                    <td class="center">62.9 ↑</td>
+                                    <td class="center">45.8 ↓</td>
+                                    <td class="center">45.0</td>
+                                    <td class="center">49.9 ↓</td>
+                                    <td class="center">56.3 ↓</td>
+                                    <td class="center">55.4 ↓</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 2. Modality exclusion</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">--</td>
+                                    <td class="center">75.1</td>
+                                    <td class="center">63.1 ↑</td>
+                                    <td class="center">60.3 ↑</td>
+                                    <td class="center">55.2 ↑</td>
+                                    <td class="center">65.7 ↑</td>
+                                    <td class="center">68.8</td>
+                                    <td class="center">64.7 ↑</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">--</td>
+                                    <td class="center">70.0 ↓</td>
+                                    <td class="center">58.8 ↑</td>
+                                    <td class="center">52.8 ↓</td>
+                                    <td class="center">44.1 ↓</td>
+                                    <td class="center">57.1 ↑</td>
+                                    <td class="center">63.2</td>
+                                    <td class="center">57.7</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">--</td>
+                                    <td class="center">73.7</td>
+                                    <td class="center">60.4 ↑</td>
+                                    <td class="center">56.4</td>
+                                    <td class="center">49.8 ↑</td>
+                                    <td class="center">44.2 ↓</td>
+                                    <td class="center">60.7 ↓</td>
+                                    <td class="center">57.5 ↓</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Modality</th>
+                                    <th>Neutral</th>
+                                    <th>Happy</th>
+                                    <th>Sad</th>
+                                    <th>Angry</th>
+                                    <th>Surprise</th>
+                                    <th>Fear</th>
+                                    <th>Disgust</th>
+                                    <th>UAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" class="center"><b>MELD</b></td>
+                                </tr>
+                                <tr>
+                                    <td>A+V+T</td>
+                                    <td class="center">68.7</td>
+                                    <td class="center">65.9</td>
+                                    <td class="center">53.8</td>
+                                    <td class="center">59.7</td>
+                                    <td class="center">69.0</td>
+                                    <td class="center">44.0</td>
+                                    <td class="center">42.6</td>
+                                    <td class="center">57.7</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 1. Modality feature nullification</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">64.1</td>
+                                    <td class="center">67.4 ↑</td>
+                                    <td class="center">52.4</td>
+                                    <td class="center">48.7</td>
+                                    <td class="center">71.5 ↑</td>
+                                    <td class="center">40.0</td>
+                                    <td class="center">30.9 ↓</td>
+                                    <td class="center">53.6</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">58.2</td>
+                                    <td class="center">65.9</td>
+                                    <td class="center">59.1 ↑</td>
+                                    <td class="center">38.6 ↓</td>
+                                    <td class="center">70.5 ↑</td>
+                                    <td class="center">40.0</td>
+                                    <td class="center">35.3</td>
+                                    <td class="center">52.5</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">37.9 ↓</td>
+                                    <td class="center">2.7 ↓</td>
+                                    <td class="center">10.6 ↓</td>
+                                    <td class="center">84.9 ↑</td>
+                                    <td class="center">1.1 ↓</td>
+                                    <td class="center">20.0 ↓</td>
+                                    <td class="center">41.2</td>
+                                    <td class="center">28.3 ↓</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 2. Modality exclusion</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">67.6</td>
+                                    <td class="center">64.9</td>
+                                    <td class="center">44.7</td>
+                                    <td class="center">49.9</td>
+                                    <td class="center">66.5</td>
+                                    <td class="center">32.0</td>
+                                    <td class="center">42.6</td>
+                                    <td class="center">52.6</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">66.9</td>
+                                    <td class="center">37.8 ↓</td>
+                                    <td class="center">43.3 ↓</td>
+                                    <td class="center">54.2</td>
+                                    <td class="center">49.8</td>
+                                    <td class="center">20.0</td>
+                                    <td class="center">25.0</td>
+                                    <td class="center">42.4</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">31.8 ↓</td>
+                                    <td class="center">43.3</td>
+                                    <td class="center">55.3 ↑</td>
+                                    <td class="center">46.4 ↓</td>
+                                    <td class="center">13.9 ↓</td>
+                                    <td class="center">16.0 ↓</td>
+                                    <td class="center">23.5 ↓</td>
+                                    <td class="center">32.9 ↓</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Modality</th>
+                                    <th>Neutral</th>
+                                    <th>Happy</th>
+                                    <th>Sad</th>
+                                    <th>Angry</th>
+                                    <th>Surprise</th>
+                                    <th>Fear</th>
+                                    <th>Disgust</th>
+                                    <th>UAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" class="center"><b>AFEW</b></td>
+                                </tr>
+                                <tr>
+                                    <td>A+V+T</td>
+                                    <td class="center">84.1</td>
+                                    <td class="center">88.7</td>
+                                    <td class="center">74.2</td>
+                                    <td class="center">70.3</td>
+                                    <td class="center">48.9</td>
+                                    <td class="center">60.9</td>
+                                    <td class="center">53.7</td>
+                                    <td class="center">68.7</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 1. Modality feature nullification</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">76.2</td>
+                                    <td class="center">90.3 ↑</td>
+                                    <td class="center">53.2</td>
+                                    <td class="center">43.8 ↓</td>
+                                    <td class="center">51.1 ↑</td>
+                                    <td class="center">54.3</td>
+                                    <td class="center">46.3</td>
+                                    <td class="center">59.3</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">49.2 ↓</td>
+                                    <td class="center">40.3 ↓</td>
+                                    <td class="center">35.5 ↓</td>
+                                    <td class="center">54.7</td>
+                                    <td class="center">26.7 ↓</td>
+                                    <td class="center">50.0</td>
+                                    <td class="center">29.3 ↓</td>
+                                    <td class="center">40.8 ↓</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">60.3</td>
+                                    <td class="center">74.4</td>
+                                    <td class="center">75.8 ↑</td>
+                                    <td class="center">75.0 ↑</td>
+                                    <td class="center">42.2</td>
+                                    <td class="center">32.6 ↓</td>
+                                    <td class="center">34.1</td>
+                                    <td class="center">56.8</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="center">Setup 2. Modality exclusion</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o A</td>
+                                    <td class="center">68.3</td>
+                                    <td class="center">61.3</td>
+                                    <td class="center">41.9 ↓</td>
+                                    <td class="center">50.0 ↓</td>
+                                    <td class="center">53.3 ↑</td>
+                                    <td class="center">45.7</td>
+                                    <td class="center">51.2</td>
+                                    <td class="center">53.1</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o V</td>
+                                    <td class="center">60.3 ↓</td>
+                                    <td class="center">37.1 ↓</td>
+                                    <td class="center">41.9 ↓</td>
+                                    <td class="center">70.3</td>
+                                    <td class="center">20.0 ↓</td>
+                                    <td class="center">43.5 ↓</td>
+                                    <td class="center">14.6 ↓</td>
+                                    <td class="center">41.1 ↓</td>
+                                </tr>
+                                <tr>
+                                    <td>w/o T</td>
+                                    <td class="center">69.8</td>
+                                    <td class="center">79.0</td>
+                                    <td class="center">74.2</td>
+                                    <td class="center">70.3</td>
+                                    <td class="center">62.2 ↑</td>
+                                    <td class="center">43.5 ↓</td>
+                                    <td class="center">43.9</td>
+                                    <td class="center">63.3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <div class="container is-max-desktop">
+                <div class="table">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h6 class="title is-6">Multi-corpus experimental results (UAR, %) based on single-corpus trained models. Δ means difference between diagonal and average values</h6>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" class="rc">Training corpus</th>
+                                        <th colspan="4">Test subset</th>
+                                        <th rowspan="2" class="rc">Average</th>
+                                    </tr>
+                                    <tr>
+                                        <th>IEMOCAP</th>
+                                        <th>MOSEI</th>
+                                        <th>MELD</th>
+                                        <th>AFEW</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>IEMOCAP</td>
+                                        <td class="center">71.3</td>
+                                        <td class="center">15.5</td>
+                                        <td class="center">22.9</td>
+                                        <td class="center">34.1</td>
+                                        <td class="center">24.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MOSEI</td>
+                                        <td class="center">38.2</td>
+                                        <td class="center">38.5</td>
+                                        <td class="center">34.3</td>
+                                        <td class="center">44.3</td>
+                                        <td class="center">38.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MELD</td>
+                                        <td class="center">42.3</td>
+                                        <td class="center">30.4</td>
+                                        <td class="center">62.0</td>
+                                        <td class="center">42.1</td>
+                                        <td class="center">38.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AFEW</td>
+                                        <td class="center">47.3</td>
+                                        <td class="center">28.4</td>
+                                        <td class="center">33.3</td>
+                                        <td class="center">79.3</td>
+                                        <td class="center">37.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average</td>
+                                        <td class="center">42.6 (Δ 28.7)</td>
+                                        <td class="center">24.8 (Δ 13.7)</td>
+                                        <td class="center">30.2 (Δ 31.8)</td>
+                                        <td class="center">40.2 (Δ 39.1)</td>
+                                        <td class="center">&mdash;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <div class="container is-max-desktop">
+                <div class="table">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h6 class="title is-6">Results (UAR, %) based on multi-corpus trained models and different encoders. Without corpus (e.g. w/o MELD) performance is for Test subsets of all training corpora, excluding MELD. ↓ shows the least generalization ability.</h6>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" class="rc">Encoder</th>
+                                        <th colspan="8">Test subset</th>
+                                    </tr>
+                                    <tr>
+                                        <th>W/o IEMOCAP</th>
+                                        <th>LOCO IEMOCAP</th>
+                                        <th>W/o MOSEI</th>
+                                        <th>LOCO MOSEI</th>
+                                        <th>W/o MELD</th>
+                                        <th>LOCO MELD</th>
+                                        <th>W/o AFEW</th>
+                                        <th>LOCO AFEW</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>IEMOCAP</td>
+                                        <td class="center">--</td>
+                                        <td class="center">--</td>
+                                        <td class="center">59.7</td>
+                                        <td class="center">31.7</td>
+                                        <td class="center">49.6</td>
+                                        <td class="center">32.8</td>
+                                        <td class="center">50.7</td>
+                                        <td class="down">42.9 ↓</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MOSEI</td>
+                                        <td class="down">43.0 ↓</td>
+                                        <td class="center">44.5</td>
+                                        <td class="center">--</td>
+                                        <td class="center">--</td>
+                                        <td class="down">43.2 ↓</td>
+                                        <td class="center">33.0</td>
+                                        <td class="center">49.4</td>
+                                        <td class="center">48.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MELD</td>
+                                        <td class="center">50.1</td>
+                                        <td class="center">44.4</td>
+                                        <td class="center">59.9</td>
+                                        <td class="center">31.6</td>
+                                        <td class="center">--</td>
+                                        <td class="center">--</td>
+                                        <td class="center">53.1</td>
+                                        <td class="center">49.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AFEW</td>
+                                        <td class="center">48.2</td>
+                                        <td class="center">44.1</td>
+                                        <td class="center">59.8</td>
+                                        <td class="down">28.5 ↓</td>
+                                        <td class="center">52.3</td>
+                                        <td class="center">32.2</td>
+                                        <td class="center">--</td>
+                                        <td class="center">--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average</td>
+                                        <td class="center">47.1</td>
+                                        <td class="center">44.3</td>
+                                        <td class="center">59.8</td>
+                                        <td class="center">30.6</td>
+                                        <td class="center">48.4</td>
+                                        <td class="center">32.7</td>
+                                        <td class="center">51.1</td>
+                                        <td class="center">46.8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <div class="container is-max-desktop">
+                <div class="table">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h6 class="title is-6">Comparison with existing MER methods. wF1 refers to weighted F1, mF1 to macro F1, WL to models trained with the weighted loss.</h6>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Year</th>
+                                        <th>Corpus</th>
+                                        <th>Modality</th>
+                                        <th>wAcc</th>
+                                        <th>wF1</th>
+                                        <th>Acc</th>
+                                        <th>F1</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Le et al.</td>
+                                        <td>2023</td>
+                                        <td rowspan="6" style="border-bottom:none;">MOSEI</td>
+                                        <td rowspan="6" style="border-bottom:none;">A+V+T</td>
+                                        <td>67.8</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>47.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MAGDRA</td>
+                                        <td>2024</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>48.8</td>
+                                        <td>56.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TAILOR</td>
+                                        <td>2022</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>48.8</td>
+                                        <td>56.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CARAT</td>
+                                        <td>2024</td>
+                                        <td>66.4</td>
+                                        <td>78.8</td>
+                                        <td>49.4</td>
+                                        <td><strong>58.1</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (w/o WL)</td>
+                                        <td>2024</td>
+                                        <td>61.4</td>
+                                        <td><strong>80.4</strong></td>
+                                        <td><strong>49.7</strong></td>
+                                        <td>54.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (WL)</td>
+                                        <td>2024</td>
+                                        <td><strong>69.3</strong></td>
+                                        <td>77.7</td>
+                                        <td>46.2</td>
+                                        <td>53.4</td>
+                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Method</th>
+                                            <th>Year</th>
+                                            <th>Corpus</th>
+                                            <th>Modality</th>
+                                            <th>Acc</th>
+                                            <th>wF1</th>
+                                            <th>mF1</th>
+                                            <th>UAR</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>TelME</td>
+                                        <td>2024</td>
+                                        <td rowspan="6">IEMOCAP</td>
+                                        <td rowspan="6">A+V+T</td>
+                                        <td>--</td>
+                                        <td>70.5</td>
+                                        <td>--</td>
+                                        <td>68.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CORECT</td>
+                                        <td>2023</td>
+                                        <td>69.9</td>
+                                        <td>70.0</td>
+                                        <td>--</td>
+                                        <td>70.9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yao et al.</td>
+                                        <td>2024</td>
+                                        <td>71.2</td>
+                                        <td>71.2</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M³Net</td>
+                                        <td>2023</td>
+                                        <td>72.5</td>
+                                        <td>72.5</td>
+                                        <td>71.5</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (w/o WL)</td>
+                                        <td>2024</td>
+                                        <td>71.9</td>
+                                        <td>71.7</td>
+                                        <td>70.5</td>
+                                        <td>70.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (WL)</td>
+                                        <td>2024</td>
+                                        <td><strong>72.9</strong></td>
+                                        <td><strong>72.8</strong></td>
+                                        <td><strong>72.0</strong></td>
+                                        <td><strong>71.6</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SDT</td>
+                                        <td>2023</td>
+                                        <td rowspan="6">MELD</td>
+                                        <td rowspan="6">A+V+T</td>
+                                        <td>66.6</td>
+                                        <td>67.5</td>
+                                        <td>49.8</td>
+                                        <td>48.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M³Net</td>
+                                        <td>2023</td>
+                                        <td>68.3</td>
+                                        <td>67.1</td>
+                                        <td>51.0</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TelME</td>
+                                        <td>2024</td>
+                                        <td>--</td>
+                                        <td>67.4</td>
+                                        <td>51.4</td>
+                                        <td>50.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yao et al.</td>
+                                        <td>2024</td>
+                                        <td>67.0</td>
+                                        <td>66.2</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (w/o WL)</td>
+                                        <td>2024</td>
+                                        <td><strong>68.8</strong></td>
+                                        <td><strong>67.7</strong></td>
+                                        <td>50.8</td>
+                                        <td>48.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (WL)</td>
+                                        <td>2024</td>
+                                        <td>64.8</td>
+                                        <td>65.7</td>
+                                        <td><strong>54.5</strong></td>
+                                        <td><strong>57.7</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nguyen et al.</td>
+                                        <td>2019</td>
+                                        <td rowspan="5">AFEW</td>
+                                        <td rowspan="3">A+V</td>
+                                        <td>62.3</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zhou et al.</td>
+                                        <td>2019</td>
+                                        <td>65.5</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abdrahimov et al.</td>
+                                        <td>2022</td>
+                                        <td>67.8</td>
+                                        <td>--</td>
+                                        <td>--</td>
+                                        <td>62.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ours (w/o WL)</td>
+                                        <td>2024</td>
+                                        <td rowspan="2" style="background-color: #fafafa">A+V+T</td>
+                                        <td>70.2</td>
+                                        <td>69.6</td>
+                                        <td>67.2</td>
+                                        <td>67.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom: 1px solid #dbdbdb;">Ours (WL)</td>
+                                        <td style="border-bottom: 1px solid #dbdbdb;">2024</td>
+                                        <td style="border-bottom: 1px solid #dbdbdb;"><strong>70.8</strong></td>
+                                        <td style="border-bottom: 1px solid #dbdbdb;"><strong>70.5</strong></td>
+                                        <td style="border-bottom: 1px solid #dbdbdb;"><strong>68.7</strong></td>
+                                        <td style="border-bottom: 1px solid #dbdbdb;"><strong>68.7</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="conclusion-section">
+            <div class="container is-max-desktop">
+                <div class="conclusion">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Conclusion</h2>
+                            <div class="content has-text-justified">
+                                <p>
+                                    In this paper, we first propose the multi-corpus MER method designed to exhibit high generalizability to new unseen data. Our method incorporates three red encoders to extract features from audio, video, and text modalities. To capture the context of audio and video signals, our method extracts statistic information from both modalities, enabling context-independent analysis of signals. The gated attention mechanism efficiently fuses information from all three modalities.
+                                    The method has been evaluated on IEMOCAP, MOSEI, MELD, and AFEW in both single- and multi-corpus setups. The new baselines have been obtained on all four corpora.
+                                    </br>
+                                    </br>
+                                    Despite the results obtained, our method, developed through multi-corpus learning and cross-corpus testing, does not reach the performance levels of models trained on a single corpus. Our findings suggest that this difference may be due to overfitting of single-corpus models to the training corpus. Additionally, the cross-corpus setup faces challenges such as discrepancies in emotional expressiveness between corpora and inconsistencies in their annotations. These two challenges should become the focus of further research.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+        <div class="content has-text-centered">
+            <a class="icon-link external-link" href="https://github.com/INTERSPEECH-2024" target="_blank">
+            <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-8">
+            <div class="content">
+                <p>
+                This page was built using the <a href="hhttps://github.com/SMIL-SPCRAS/MER" target="_blank">MER project page</a>, which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
