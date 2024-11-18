@@ -1,0 +1,79 @@
+[general]
+device = 'cuda'    # Options: 'cpu', 'cuda'
+detector = 'yolo'  # Options: 'retinaface', 'yolo'
+
+[paths]
+video_path = "src/test_video/"                                    # Path to test videos are used in inference.py
+true_data_path = "src/test_video/df_text_AFEW.csv"                # Dataframe with ground truth labels are used in inference.py
+path_to_video = "D:/Databases/AFEW/Val_AFEW/"                     # Path to dataset are used in avt_feature_extraction.py
+path_to_saving_features = 'C:/Work/MER_PRL_features/AFEW/Val/'    # Path to saving features are used in avt_feature_extraction.py
+train_data_path = 'C:/Work/MER_PRL_features/AFEW/Train/'          # Path to train features are used in train_avt_model.py
+val_data_path = 'C:/Work/MER_PRL_features/AFEW/Val/'              # Path to val features are used in train_avt_model.py
+save_model_path = './models/'                                     # Path to saving trained models are used in train_avt_model.py        
+
+[models]
+video_model_path = 'src/weights/FER_static_ResNet50_AffectNet.pt'      # pre-trained video model
+audio_model_path = 'DunnBC22/wav2vec2-base-Speech_Emotion_Recognition' # pre-trained audio model
+text_model_path = 'j-hartmann/emotion-english-distilroberta-base'      # pre-trained text model
+whisper_model = 'openai/whisper-base'                                  # ASR
+yolo_weights_path = 'src/weights/yolov8n-face.pt'                      # For YOLO
+avt_model_path = 'src/weights/AFEW/fusion.pth'                         # pre-trained avt model through single-corpus
+audio_model_path_2 = 'src/weights/AFEW/audio.pth'                      # fine-tuned audio model
+text_model_path_2 = 'src/weights/AFEW/text.pth'                        # fine-tuned text model
+video_model_path_2 = 'src/weights/AFEW/video.pth'                      # fine-tuned video model
+avt_sc_model_path = 'src/weights/MELD/fusion.pth'                      # pre-trained avt model through single-corpus
+avt_mc_model_path = 'src/weights/LOCO/MELD_encoders/test_AFEW.pth'     # pre-trained avt model through multi-corpus
+
+[parameters]
+step = 2                # seconds
+window = 4              # seconds
+need_frames = 5         # 5 frames per second
+sampling_rate = 16000   # Hz
+encoder_num_classes = 7 # 6 fot CMU / IEMOCAP encoder and 7 for AFEW / MELD encoder
+mc_num_classes = 7      # for multi-corpus models
+batch_size_limit = 70   # batch size limit for static video model
+
+[face_detection]
+threshold = 0.8          # For RetinaFace
+iou_threshold = 0.4      # For face tracking
+minimum_face_size = 0.0  # For face tracking
+
+[speech_recognition]
+chunk_length_s = 30
+
+[emotion_labels]
+labels = ['Neutral', 'Happy', 'Sad', 'Surprise', 'Fear', 'Disgust', 'Angry'] # Order of emotions in multimodal models
+dict_emo_avt = { 'Neutral' = 0, 'Happy' = 1, 'Sad' = 2, 'Surprise' = 3, 'Fear' = 4, 'Disgust' = 5, 'Angry' = 6 }
+
+[training]
+batch_size = 32           # Batch size for training (number of samples per batch)
+epochs = 300              # Total number of training epochs
+seed = 42                 # Random seed for reproducibility
+learning_rate = 1e-4      # Learning rate for the optimizer
+weight_decay = 1e-2       # Weight decay (L2 regularization coefficient)
+gated_dim = 128           # Dimension of the hidden layer in the Gated Multimodal Unit
+n_classes = 7             # Number of emotion classes for classification
+dropout = 0.1             # Dropout probability for regularization
+corpus = 'AFEW'           # Name of the dataset used for training
+modality = 'avt'          # Modalities used: 'a' - audio, 'v' - video, 't' - text (can be combined)
+patience = 20             # Number of epochs without improvement for early stopping
+optimizer = 'adam'        # Type of optimizer; options: 'adam', 'sgd', 'lion'
+
+[logging]
+log_dir = './logs/'       # Directory to save training logs
+
+[scheduler]
+type = 'None'     # Type of learning rate scheduler; options: 'CosineAnnealingWarmRestarts', 'None'
+T_0 = 10          # Number of iterations before the first restart in the scheduler
+T_mult = 20       # Multiplicative factor to increase the period between restarts
+
+# [scheduler]
+# type = 'StepLR' # Type of learning rate scheduler; options: 'StepLR', 'None'
+# step_size = 30  # Period of learning rate decay
+# gamma = 0.1     # Multiplicative factor of learning rate decay
+
+[model]
+input_dim_a = 512     # Input feature dimension for audio
+input_dim_v = 1024    # Input feature dimension for video
+input_dim_t = 768     # Input feature dimension for text
+
