@@ -24,7 +24,7 @@ The proposed method achieves **state-of-the-art performance** across multiple be
 
 ### Accessing the Models
 
-The pre-trained models are available [here](https://drive.google.com/drive/u/2/folders/1veuXhNBj0OKT-oa9-ge6UU1NxAVZGfNr).
+The pre-trained models are available [here](https://drive.google.com/drive/folders/1NTVQatpihMwe5im_LZqAAouzAQWVjRwx?usp=sharing).
 
 
 ### Inference
