@@ -1,6 +1,6 @@
 # Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion
 
-The official repository for "Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion", [Pattern Recognition Letters](https://www.sciencedirect.com/journal/pattern-recognition-letters) (submitted)
+The official repository for "Multi-Corpus Emotion Recognition Method based on Cross-Modal Gated Attention Fusion", [Pattern Recognition Letters](https://www.sciencedirect.com/science/article/pii/S0167865525000662)
 
 ## Overview
 
